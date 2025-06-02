@@ -1,0 +1,12 @@
+﻿@model List<WebBanHang.Models.Category>
+
+<ul class="list-group">
+    @foreach (var c in Model)
+    {
+        <li class="list-group-item">
+            <a href="@Url.Action("Index", "Product", new { catid = c.Id })" class="text-decoration-none text-dark">
+                @c.Name
+            </a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebBanHang</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #212529;
+        }
+
+        .navbar {
+            background-color: #d4f9f1 !important;
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #0d6efd !important;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            color: #212529 !important;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #0d6efd !important;
+            }
+
+        .container main {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        footer {
+            background-color: #d4f9f1;
+            color: #6c757d;
+            padding: 1rem 0;
+        }
+
+            footer a {
+                color: #0d6efd;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+        input.form-control, select.form-control, textarea.form-control {
+            background-color: #ffffff;
+            color: #212529;
+            border: 1px solid #ced4da;
+        }
+
+        label {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebBanHang</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Quản lý danh mục</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">Quản lý sản phẩm</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            &copy; 2025 - WebBanHang - <a asp-area="" asp-controller="Home" asp-action="Privacy">Chính sách bảo mật</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
